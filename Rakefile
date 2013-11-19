@@ -107,6 +107,16 @@ end
 
 task :test => :clean_env
 
+BUNDLER_SPECS = %w[
+  ../bundler/spec/lock/lockfile_spec.rb
+]
+
+task :bundler_specs => BUNDLER_SPECS do
+  BUNDLER_SPECS.each do |spec|
+    system Gem.ruby, '-Ilib:spec', spec
+  end
+end
+
 # --------------------------------------------------------------------
 # Creating a release
 
