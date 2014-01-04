@@ -78,7 +78,7 @@ class Gem::Source
   # Returns a Set that can fetch specifications from this source.
 
   def dependency_resolver_set # :nodoc:
-    bundler_api_uri = api_uri + './api/v1/dependencies'
+    bundler_api_uri = 'https://bundler.rubygems.org/api/v1/dependencies'
 
     begin
       fetcher = Gem::RemoteFetcher.fetcher
@@ -219,4 +219,3 @@ require 'rubygems/source/specific_file'
 require 'rubygems/source/local'
 require 'rubygems/source/lock'
 require 'rubygems/source/vendor'
-
